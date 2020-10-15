@@ -8,6 +8,18 @@ from streamlit_folium import folium_static
 import geopandas as gp
 # SETTING PAGE CONFIG TO WIDE MODE
 st.beta_set_page_config(layout="wide")
+st.title('Streamlit with Folium')
+
+"""
+## An easy way to create a website using Python
+"""
+
+df = pd.read_csv('https://raw.githubusercontent.com/Maplub/MonthlyAirQuality/master/sensorlist.csv')
+
+tambol = st.text_input(label='ตำบล')
+
+st.write(df[df['tambol'] == tambol])
+
 
 # LOADING DATA
 DATE_TIME = "timestart"
